@@ -22,7 +22,7 @@ export class CarComponent implements OnInit {
         this.getCarsByColor(params['colorId']);
       } else if (params['customerId']) {
         this.getCustomers();
-      }else {
+      } else {
         this.getCars();
       }
     });
