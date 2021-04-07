@@ -3,8 +3,7 @@
   <li (click)="setCurrentBrand(brand)"
     routerLink="/cars/brand/{{brand.brandId}}"
     *ngFor="let brand of brands"
-    [class]="getCurrentBrandClass(brand)" >
-    {{ brand.brandName }} </li>
+    [class]="getCurrentBrandClass(brand)" > {{ brand.brandName }} </li>
 </ul>
 
 <h5 *ngIf="currentBrand">{{ currentBrand.brandName }} selected</h5>

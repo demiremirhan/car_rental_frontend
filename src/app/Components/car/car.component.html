@@ -1,22 +1,36 @@
-<div *ngIf="dataLoaded==false" class="spinner-border text-success" role="status">
-    <span class="visually-hidden">Loading...</span>
+<div class="card mb-2">
+    <div class="card-header text-center">
+       <strong>LIST OF CAR</strong>
+    </div>
+    <div class="card-body">
+   
+    
+<div *ngIf="dataLoaded == false" class="text-center">
+    <div class="spinner-border text-dark text-center" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+</div>  
+<table *ngIf="dataLoaded == true" class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>Car ID</th>
+            <th>Color</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Daily Price</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr routerLink="/cars/car-detail/{{car.Id}}" *ngFor="let car of cars">
+            <td>{{car.Id}}</td>
+            <td>{{car.colorName}}</td>
+            <td>{{car.brandName}}</td>
+            <td>{{car.modelYear}}</td>
+            <td>{{car.dailyPrice}} ₺</td>
+            <td>{{car.description}}</td>
+        </tr>
+    </tbody>
+    </table>
+    </div>
   </div>
-<table *ngIf="dataLoaded!=false" class = "table">
-<thead>
-    <tr>
-        <th>Id</th>
-        <th>BrandId</th>
-        <th>dailyPrice</th>
-        <th>özellik</th>
-        <th>colorId</th>
-    </tr>
-</thead>
-    <tr *ngFor ="let car of cars">
-        <td>{{car.carId}}</td>
-        <td>{{car.brandId}}</td>
-        <td>{{car.dailyPrice}}</td>
-        <td>{{car.description}}</td>
-        <td>{{car.colorId}}</td>
-        
-    </tr>
-</table>
