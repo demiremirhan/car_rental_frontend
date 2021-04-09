@@ -1,0 +1,9 @@
+<ul class="list-group">
+    <li class="getAllCustomerClass()" routerLink = "/cars"> All Customers </li>
+    <li (click)="setCurrentCustomer(customer)"
+      routerLink="/cars/customer/{{customer.customerId}}"
+      *ngFor="let customer of customers"
+      [class]="getCurrentCustomerClass(customer)" > {{ customer.companyName }} </li>
+  </ul>
+  
+  <h5 *ngIf="currentCustomer">{{ currentCustomer.companyName }} selected</h5>
