@@ -4,7 +4,7 @@ import { ColorService } from 'src/app/services/color.service';
 
 @Component({
   selector: 'app-color',
-  templateUrl: './color.component.html',
+  templateUrl:'./color.component.html',
   styleUrls: ['./color.component.css'],
 })
 export class ColorComponent implements OnInit {

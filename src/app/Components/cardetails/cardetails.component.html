@@ -1,0 +1,37 @@
+<tr *ngFor="let car of cars">
+    <div  *ngFor="let carImage of carImages" class="card" style="width: fullwidth;">
+      <img src="{{imageUrl}}{{carImage.imagePath}}" class="card-img-top" alt="...">
+      <div class="card-body" >
+        <h5 class="card-title">{{car.brandName}} {{car.description}}</h5>
+        <p class="card-text">RentalCars ayrıcalığı ile kiralayın!</p>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-2">
+                    <h4 class="card-title " style="text-align: center;">Marka</h4>
+                    <p class="card-text"  style="text-align: center;" >{{car.brandName}} </p>
+                </div>
+                <div class="col-sm-2">
+                    <h4 class="card-title" style="text-align: center;">Model</h4>
+                    <p class="card-text"  style="text-align: center;" > {{car.description}}</p>
+                </div>
+                <div class="col-sm-2">
+                    <h4 class="card-title" style="text-align: center;">Araç Rengi</h4>
+                    <p class="card-text"  style="text-align: center;" > {{car.colorName}}</p>
+                </div>
+                <div class="col-sm-2">
+                    <h4 class="card-title" style="text-align: center;">Model Yılı</h4>
+                    <p class="card-text"  style="text-align: center;" >{{car.modelYear}}</p>
+                </div>
+                <div class="col-sm-2">
+                    <h4 class="card-title " style="text-align: center;">Günlük Fiyat</h4>
+                    <p class="card-text"  style="text-align: center;" >{{car.dailyPrice |currency:"₺"}} </p>
+                </div>
+             
+            </div>
+      </div>
+    </div>
+    <div class="d-grid gap-2">
+        <button (click)="addToCart(car)" class="btn btn-success" type="button">Kirala</button>
+    </div>
+    </div>
+    </tr>
